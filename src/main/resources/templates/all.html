@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h3>all페이지</h3>
+	
+	<div sec:authorize="isAuthenticated()"> <!-- 인증되었으면 true -->
+		[[${#authentication.principal}]] <br/>
+		[[${#authentication.principal.username}]] <br/>
+		[[${#authentication.principal.password}]] <br/>
+		[[${#authentication.principal.role}]] <br/>
+	</div>
+
+</body>
+</html>
